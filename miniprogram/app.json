@@ -1,17 +1,35 @@
 {
   "pages": [
-    "pages/index/index"
-    
-    
+    "pages/index/index",
+    "pages/money/money",
+    "pages/config/config"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "Home App",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "功能",
+      "iconPath": "images/tabBar/home.png",
+      "selectedIconPath": "images/tabBar/home_slc.png"
+    },{
+      "pagePath": "pages/money/money",
+      "text": "理财",
+      "iconPath": "images/tabBar/money.png",
+      "selectedIconPath": "images/tabBar/money_slc.png"
+    },{
+      "pagePath": "pages/config/config",
+      "text": "设置",
+      "iconPath": "images/tabBar/config.png",
+      "selectedIconPath": "images/tabBar/config_slc.png"
+    }]
+  }
   
 }

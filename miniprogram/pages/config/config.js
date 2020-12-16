@@ -1,4 +1,4 @@
-// pages/chooseLib/chooseLib.js
+// pages/config/config.js
 Page({
 
   /**
