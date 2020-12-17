@@ -1,0 +1,5 @@
+<!--pages/bill/bill.wxml-->
+<text>pages/bill/bill.wxml</text>
+<scroll-view class="bill" scroll-y="true">
+  <view wx:for="{{billarr}}" class="billitem">{{item}}</view>
+</scroll-view>
