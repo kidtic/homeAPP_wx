@@ -6,7 +6,16 @@ Page({
    */
   data: {
     avatarUrl: './user-unlogin.png',
-    userName: "none",
+    userName: "未登录",
+    userType:"管理员",
+    //目标用户的余额
+    manageMoney: 100,
+    //目标用户
+    targetUser:{
+      name:"未匹配",
+      type:"VIP",
+      avatarUrl:'./user-unlogin.png',
+    }
   },
 
   /**

@@ -1,0 +1,79 @@
+{
+  "id": "2325359",
+  "name": "homeapp",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4425898",
+      "name": "交换",
+      "font_class": "jiaohuan",
+      "unicode": "e7b2",
+      "unicode_decimal": 59314
+    },
+    {
+      "icon_id": "3546139",
+      "name": "学生妹",
+      "font_class": "xueshengmei",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "5193364",
+      "name": "蔬菜",
+      "font_class": "shucai",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "6364167",
+      "name": "二维码",
+      "font_class": "ico",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "9166452",
+      "name": "物业费",
+      "font_class": "wuyefei",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "10416464",
+      "name": "水费管理",
+      "font_class": "shuifeiguanli",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "12037103",
+      "name": "钱币",
+      "font_class": "qianbi",
+      "unicode": "e764",
+      "unicode_decimal": 59236
+    },
+    {
+      "icon_id": "15388515",
+      "name": "管理员",
+      "font_class": "guanliyuan",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "15657232",
+      "name": "电费成本分析",
+      "font_class": "dianfeichengbenfenxi",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "5666269",
+      "name": "VIP",
+      "font_class": "VIP",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    }
+  ]
+}

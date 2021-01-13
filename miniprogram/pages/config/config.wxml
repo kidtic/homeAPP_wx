@@ -1,8 +1,14 @@
 <!--pages/config/config.wxml-->
+
 <view class="container">
+
+<view style="height: 150px;width: 100%;">
+  <image class="userinfo-bg" src="https://6b69-kidtic-env-5gbpc6269629e3a5-1304479805.tcb.qcloud.la/user_bg1.jpg?sign=faa432def71073955dce3fbb59af8b14&t=1610527882" mode="widthFix"></image>
+</view>
 
 <!-- 用户 openid -->
 <view class="userinfo">
+  <!--头像标签-->
   <button 
     open-type="getUserInfo" 
     bindgetuserinfo="onGetUserInfo"
@@ -10,9 +16,43 @@
     style="background-image: url({{avatarUrl}})"
     size="default"
   ></button>
+  <!--昵称标签-->
   <view class="userinfo-nickname-wrapper">
     <button class="userinfo-nickname">{{userName}}</button>
   </view>
+  <!--身份标签-->
+  <view class="userinfo-type">
+    <icon wx:if="{{userType=='管理员'}}" class="iconfont icon-guanliyuan" style="font-size: 20px;" ></icon>
+    <icon wx:if="{{userType=='VIP'}}" class="iconfont icon-VIP" style="font-size: 30px;" ></icon>
+    <text>{{userType}}</text>
+  </view>
+  <!--钱币标签-->
+  <view class="userinfo-money">
+    <icon class="iconfont icon-qianbi" style="font-size: 35px;"></icon>
+    <text style="font-size: 35px; margin-left: 30rpx;">{{manageMoney}}</text>
+  </view>
+  <icon class="iconfont icon-jiaohuan" style="font-size: 35px;position: absolute; top: 50rpx; left: 310rpx;" ></icon>
+  <!--       目标内容       -->
+  <!--头像标签-->
+  <button 
+    open-type="getUserInfo" 
+    bindgetuserinfo="onGetUserInfo"
+    class="userinfo-avatar"
+    style="background-image: url({{targetUser.avatarUrl}}); left: 390rpx;"
+    size="default"
+  ></button>
+  <!--昵称标签-->
+  <view class="userinfo-nickname-wrapper" style="left: 470rpx">
+    <button class="userinfo-nickname">{{targetUser.name}}</button>
+  </view>
+  <!--身份标签-->
+  <view class="userinfo-type" style="left: 500rpx;" >
+    <icon wx:if="{{targetUser.type=='管理员'}}" class="iconfont icon-guanliyuan" style="font-size: 20px;" ></icon>
+    <icon wx:elif="{{targetUser.type=='VIP'}}" class="iconfont icon-VIP" style="font-size: 30px;" ></icon>
+    
+    <text >{{targetUser.type}}</text>
+  </view>
+
 </view>
 
 

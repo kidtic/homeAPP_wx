@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/bill/bill",
     "pages/config/config",
     "pages/index/index",
+    "pages/bill/bill",
     "pages/money/money"
   ],
   "window": {
