@@ -1,3 +1,6 @@
+//const { fail } = require("assert");
+//const { userInfo } = require("os");
+
 // pages/config/config.js
 Page({
 
@@ -7,14 +10,16 @@ Page({
   data: {
     avatarUrl: './user-unlogin.png',
     userName: "未登录",
-    userType:"管理员",
+    userType:"",
+    userOpenID:"",
     //目标用户的余额
     manageMoney: 100,
     //目标用户
     targetUser:{
       name:"未匹配",
-      type:"VIP",
+      type:"",
       avatarUrl:'./user-unlogin.png',
+      openid:''
     }
   },
 
@@ -23,9 +28,7 @@ Page({
    */
   onLoad: function (options) {
     if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
+
       return
     }
 
@@ -47,6 +50,39 @@ Page({
         }
       }
     })
+    //初始化 --检查当前用户的类型,查找管理对象
+    const db=wx.cloud.database();
+    wx.cloud.callFunction({
+      name:'login',
+      success:res=>{
+        this.setData({userOpenID: res.result.openid,})
+        const userdb=db.collection('user');
+        userdb.where({openid: this.data.userOpenID,}).get({
+          success:res=>{
+            if(res.data.length!=1){console.log("error:res.data.lengh!=1");return;}
+            this.setData({userType:res.data[0].type,});
+            //查找管理对象
+            var manageopenid=res.data[0].manageOpenID;
+            userdb.where({openid:manageopenid}).get({
+              success:res=>{
+                if(res.data.length!=1){console.log("error:res.data.lengh!=1");return;}
+                this.setData({
+                  targetUser:{
+                    name:res.data[0].name,
+                    type:res.data[0].type,
+                    avatarUrl:res.data[0].avatarUrl,
+                    openid:res.data[0].openid
+                  }
+                })
+              }
+            })
+            
+          }
+        })
+      },
+      fail:console.error
+    })
+    
   },
 
   /**
